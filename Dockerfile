@@ -1,11 +1,11 @@
 ##### stage 1: distillery build #####
 FROM bitwalker/alpine-elixir-phoenix:latest AS build
 
-ENV MIX_ENV=prod
-ENV ESADDR=http://localhost:9200
-
 WORKDIR /build
 COPY . .
+
+ENV MIX_ENV=prod
+ENV ESADDR=http://localhost:9200
 
 RUN cd dashboard && \
     mix clean --deps && \
@@ -30,6 +30,7 @@ RUN apk update && apk add --no-cache bash openssl
 ENV LANG C.UTF-8
 
 # default host, port and elasticsearch address
+ENV MIX_ENV=prod
 ENV HOST=localhost
 ENV PORT=80
 ENV ESADDR=http://localhost:9200

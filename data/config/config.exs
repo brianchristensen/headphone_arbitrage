@@ -2,4 +2,4 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
-config :data, elasticsearch_address: System.get_env("ESADDR")
+config :data, elasticsearch_address: "http://localhost:9200" #System.get_env("ESADDR")

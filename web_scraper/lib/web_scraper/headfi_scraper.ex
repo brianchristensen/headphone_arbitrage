@@ -61,6 +61,7 @@ defmodule WebScraper.HeadFiScraper do
     |> String.replace("fs", "")
     |> String.replace("for sale", "")
     |> String.replace(":", "")
+    |> String.replace("\"", "")
     |> String.trim()
   end
 
